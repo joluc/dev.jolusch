@@ -3,10 +3,10 @@ title   = "Hey, I am Jolusch."
 languageCode = "en-us"
 theme = "hello-friend-ng"
 
-PygmentsCodeFences = true
-PygmentsStyle = "monokai"
+# Pygments settings moved to markup.highlight
 
-paginate  = 10
+[pagination]
+  pagerSize = 10
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 
 # googleAnalytics = ""
@@ -38,8 +38,15 @@ disableHugoGeneratorInject = false
 [author]
   name = "dev.jolusch.de"
 
-[blackfriday]
-  hrefTargetBlank = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
 
 [taxonomies]
   tag      = "tags"
@@ -53,7 +60,7 @@ disableHugoGeneratorInject = false
   dateformNumTime = "2006-01-02 15:04"
 
   # Metadata mostly used in document's head
-  # 
+  #
   description = "JOLUSCH"
   keywords = ""
   images = [""]
@@ -91,8 +98,8 @@ disableHugoGeneratorInject = false
   defaultTheme = "light"
   themeColor = "#252627"
 
-  # Custom footer 
-  # If you want, you can easily override the default footer with your own content. 
+  # Custom footer
+  # If you want, you can easily override the default footer with your own content.
   #
   footerLeft = "Based on <a href=\"http://gohugo.io\">Hugo</a>"
   footerRight = "Hosted by <a href=\"http://github.com\">GitHub</a>"
