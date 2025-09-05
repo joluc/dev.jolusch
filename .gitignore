@@ -1,6 +1,6 @@
 # Hugo build output
 /public/
-/docs/
+# /docs/ - Commented out because GitHub Pages needs this directory
 /dist/
 
 # Hugo cache and temporary files
